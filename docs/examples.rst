@@ -8,6 +8,8 @@ Producer
 .. code-block:: python
 
     import sys
+    import os
+    import logging
     from karton.core import Config, Producer, Task, Resource
 
     config = Config("karton.ini")
@@ -25,7 +27,7 @@ Producer
     task.add_payload("tags", ["simple_producer"])
     task.add_payload("additional_info", ["This sample has been added by simple producer example"])
 
-    logging.info('pushing file to karton %s, task %s' % (name, task))
+    logging.info('pushing file to karton %s, task %s' % (filename, task))
     producer.send_task(task)
 
    
